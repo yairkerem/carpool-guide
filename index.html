@@ -122,6 +122,23 @@
   .plat li{display:grid;grid-template-columns:auto 1fr;gap:8px}
   .plat b{color:var(--ink);font-weight:700;white-space:nowrap}
 
+  /* Adding to the home screen is the step people give up on, and the two
+     platforms have nothing in common but the outcome — so each gets its own
+     card with its own taps, rather than one line apiece to be guessed at.
+     Side by side where there is room, stacked on a phone, which is where
+     this is actually being read. */
+  .how{display:grid;gap:12px;margin-top:12px;grid-template-columns:1fr}
+  @media (min-width:640px){ .how{grid-template-columns:1fr 1fr} }
+  .how-card{
+    background:var(--ground);border:1px solid var(--line);border-radius:12px;
+    padding:13px 15px;
+  }
+  .how-card > b{display:block;color:var(--ink);font-weight:700;margin-bottom:7px}
+  .how-card ol{margin:0;padding-inline-start:19px;display:flex;
+               flex-direction:column;gap:5px;font-size:15px;color:var(--muted)}
+  .how-card ol strong{color:var(--ink)}
+  .how-card .tiny{margin:9px 0 0;font-size:13.5px;color:var(--muted);opacity:.85}
+
   /* A miniature of the real board, so the words below name things they have
      already seen rather than things they must imagine. */
   .board{
@@ -226,11 +243,32 @@
         <div class="num">2</div>
         <div class="step-body">
           <h3>מוסיפים למסך הבית</h3>
-          <p>כדי שייפתח כמו אפליקציה, ויעבוד גם בלי קליטה.</p>
-          <ul class="plat">
-            <li><b>אנדרואיד</b><span>תפריט Chrome ← הוספה למסך הבית</span></li>
-            <li><b>אייפון</b><span>כפתור השיתוף בספארי ← הוספה למסך הבית. חייב להיות ספארי.</span></li>
-          </ul>
+          <p>כדי שייפתח כמו אפליקציה, בלי שורת הכתובת, ויעבוד גם בלי קליטה. באייפון זה גם התנאי להתראות.</p>
+
+          <div class="how">
+            <div class="how-card">
+              <b>אנדרואיד</b>
+              <ol>
+                <li>פותחים את הקישור ב־<strong>Chrome</strong>.</li>
+                <li>שלוש הנקודות ⋮ בפינה העליונה.</li>
+                <li>בוחרים <strong>הוספה למסך הבית</strong>. בחלק מהמכשירים כתוב שם <strong>התקנת האפליקציה</strong> — זה אותו דבר.</li>
+                <li>מאשרים <span class="quiet-say">הוספה</span>. סמל המכונית נוסף למסך הבית.</li>
+              </ol>
+              <p class="tiny">בדפדפן של סמסונג: תפריט ☰ ← הוספת דף אל ← מסך הבית.</p>
+            </div>
+
+            <div class="how-card">
+              <b>אייפון ואייפד</b>
+              <ol>
+                <li>פותחים את הקישור ב<strong>ספארי</strong> דווקא. אם הוא נפתח בתוך וואטסאפ או בכרום, לוחצים על ⋯ ובוחרים <strong>פתיחה בספארי</strong>.</li>
+                <li>כפתור השיתוף בתחתית המסך — ריבוע עם חץ כלפי מעלה.</li>
+                <li>גוללים את הרשימה מטה עד <strong>הוספה למסך הבית</strong>.</li>
+                <li>לוחצים <span class="quiet-say">הוספה</span> בפינה העליונה.</li>
+                <li>מכאן והלאה פותחים את האפליקציה מסמל המכונית, לא מספארי.</li>
+              </ol>
+              <p class="tiny">לא רואים "הוספה למסך הבית"? היא בהמשך הרשימה, צריך לגלול.</p>
+            </div>
+          </div>
         </div>
       </li>
       <li>
