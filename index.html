@@ -138,6 +138,22 @@
                flex-direction:column;gap:5px;font-size:15px;color:var(--muted)}
   .how-card ol strong{color:var(--ink)}
   .how-card .tiny{margin:9px 0 0;font-size:13.5px;color:var(--muted);opacity:.85}
+  /* A second route inside one card, set apart by a rule rather than a new
+     card: it is the same phone and the same goal, reached from further on. */
+  .how-card > b.sub{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+
+  /* The paste field as the app draws it, so "the field at the top of the
+     screen" is something already seen rather than something to look for. */
+  .paste-mock{
+    margin-top:12px;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:11px 13px;
+  }
+  .paste-mock .lbl{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .paste-mock .box{
+    border:1px solid var(--line);border-radius:10px;padding:9px 11px;
+    font-size:14px;color:var(--muted);background:var(--ground);direction:ltr;text-align:left;
+  }
+  .paste-mock .said{font-size:13px;color:var(--brand);font-weight:600;margin-top:6px}
 
   /* A miniature of the real board, so the words below name things they have
      already seen rather than things they must imagine. */
@@ -237,7 +253,7 @@
         <div class="step-body">
           <h3>לוחצים על הקישור</h3>
           <p>הקישור שקיבלתם בוואטסאפ פותח את האפליקציה כשכל הפרטים כבר בפנים. נשאר רק למלא <strong>שם</strong> — כך שאר ההורים יזהו אתכם — לבחור <strong>צבע</strong>, ואם בא לכם גם <strong>טלפון</strong>, כדי שאפשר יהיה להתקשר אליכם מתוך האפליקציה. ואז <span class="btn-say">התחברות</span></p>
-          <p style="margin-top:8px"><strong>באייפון לא נרשמים בספארי.</strong> מה שנרשם שם נשאר בספארי, והאפליקציה במסך הבית נפתחת ריקה. קודם עושים את שלב 2, ונרשמים באפליקציה שנפתחת ממסך הבית.</p>
+          <p style="margin-top:8px"><strong>באייפון לא נרשמים בספארי.</strong> מה שנרשם שם נשאר בספארי, והאפליקציה במסך הבית נפתחת ריקה. קודם עושים את שלב 2, ונרשמים באפליקציה שנפתחת ממסך הבית: מדביקים בה את קישור ההזמנה, וכל הפרטים מתמלאים.</p>
         </div>
       </li>
       <li>
@@ -270,6 +286,19 @@
                 <li>מכאן והלאה פותחים את האפליקציה מסמל המכונית, לא מספארי.</li>
               </ol>
               <p class="tiny">לא רואים "הוספה למסך הבית"? היא בהמשך הרשימה, צריך לגלול.</p>
+
+              <b class="sub">האפליקציה כבר במסך הבית?</b>
+              <ol>
+                <li>בוואטסאפ, לחיצה ארוכה על קישור ההזמנה ← <strong>העתקה</strong>. לא לוחצים עליו — הוא ייפתח בספארי.</li>
+                <li>פותחים את האפליקציה מסמל המכונית.</li>
+                <li>מדביקים בשדה שבראש המסך, מוסיפים שם ולוחצים <span class="quiet-say">התחברות</span>.</li>
+              </ol>
+
+              <div class="paste-mock" aria-hidden="true">
+                <div class="lbl">יש לכם קישור הזמנה?</div>
+                <div class="box">https://yairkerem.github.io/Carpool/#j=…</div>
+                <div class="said">ההזמנה נקלטה: הכתובת, הקוד והסיסמה מולאו. נשאר להוסיף שם.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -278,7 +307,7 @@
         <div class="num">3</div>
         <div class="step-body">
           <h3>מפעילים התראות</h3>
-          <p>בהגדרות (⚙) ← <span class="btn-say">הפעלת התראות</span> ← לאשר. בערב שלפני כל נסיעה שאתם משובצים אליה תקבלו תזכורת, ופעם בשבוע הודעה אם נשארו נסיעות בלי מספיק נהגים.</p>
+          <p>בהגדרות (⚙) מזיזים את <strong>מתג ההתראות</strong> ימינה ← לאשר. המתג נצבע, וכתוב לידו <strong>ההתראות פעילות במכשיר הזה</strong>. בערב שלפני כל נסיעה שאתם משובצים אליה תקבלו תזכורת, ופעם בשבוע הודעה אם נשארו נסיעות בלי מספיק נהגים.</p>
           <p style="margin-top:8px"><strong>באייפון</strong> ההתראות עובדות רק אחרי שלב 2. זה לא באג — זו מגבלה של אפל.</p>
         </div>
       </li>
